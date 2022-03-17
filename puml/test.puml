@@ -1,0 +1,8 @@
+@startuml
+
+node "Investor Corda Node" {
+component "Greenium CorDapp" as INV_CORDAPP
+database "Vault" as INV_V
+} 
+
+@enduml
