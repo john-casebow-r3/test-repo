@@ -8,6 +8,10 @@ class App {
         get() {
             return "Hello World!"
         }
+
+    fun untestedMethod(): String {
+        return "Untested"
+    }
 }
 
 fun main() {
