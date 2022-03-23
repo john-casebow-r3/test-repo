@@ -9,7 +9,7 @@ class App {
             return "Hello World!"
         }
 
-    fun untestedMethod(): String {
+    fun testedMethod(): String {
         return "Untested"
     }
 }
