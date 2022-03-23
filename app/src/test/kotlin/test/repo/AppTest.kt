@@ -12,7 +12,7 @@ class AppTest {
         assertNotNull(classUnderTest.greeting, "app should have a greeting")
     }
 
-    @Test fun testAppHasAGreeting() {
+    @Test fun testSomethingElse() {
         val classUnderTest = App()
         assertNotNull(classUnderTest.testedMethod(), "should return a String")
     }
