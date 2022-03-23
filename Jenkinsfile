@@ -12,24 +12,10 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Jenkins', url: 'https://github.com/john-casebow-r3/greenium']]])
-            }
-        }
-
         stage('Build') {
             steps {
                 withGradle {
                     sh './gradlew clean build'
-                }
-            }
-        }
-
-        stage('IntegrationTest') {
-            steps {
-                withGradle {
-                    sh './gradlew integrationTest'
                 }
             }
         }
@@ -38,7 +24,6 @@ pipeline {
     post {
         always {
             junit '**/test/*.xml'
-            junit '**/integrationTest/*.xml'
             jacoco classPattern: "**/*/classes", sourcePattern: "**/src/main/kotlin"
         }
     }
