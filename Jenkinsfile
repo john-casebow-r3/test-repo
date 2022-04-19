@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 withGradle {
-                    sh './gradlew clean build'
+                    sh './gradlew clean build --stacktrace --debug'
                 }
             }
         }
