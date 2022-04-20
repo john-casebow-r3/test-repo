@@ -17,14 +17,9 @@ pipeline {
                 withGradle {
                     sh './gradlew clean build --stacktrace --info'
                 }
+                junit '**/test/*.xml'
+                jacoco classPattern: "**/*/classes", sourcePattern: "**/src/main/kotlin"
             }
-        }
-    }
-
-    post {
-        always {
-            junit '**/test/*.xml'
-            jacoco classPattern: "**/*/classes", sourcePattern: "**/src/main/kotlin"
         }
     }
 }
